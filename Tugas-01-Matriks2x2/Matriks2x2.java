@@ -93,52 +93,28 @@ public class Matriks2x2 {
         return determinan;
     }
     
-    Matriks2x2 inverse () throws TanpaInverse, SalahIndeks{ 
-    Matriks2x2 A = new Matriks2x2(a11, a12, a21, a22);   
- double detA = A.determinan();
-    Matriks2x2 invA = A.inverse();
+    Matriks2x2 inverse()throws TanpaInverse, SalahIndeks{
+           int a11 = 0, a12 = 0, a21 = 0, a22 = 0;
+         
+          if(determinan() !=0){
+                   a11= this.a22/(int)determinan();
+                     a12= -this.a21/(int)determinan();
+                    a21= -this.a12/(int)determinan();
+                     a22= this.a11/(int)determinan();
+                }
+                else{       
+                     throw new TanpaInverse("non inverse");
+                    }    
+           return  new Matriks2x2(a11,a12,a21,a22);  
+} 
     
-    try{
-        if (detA == 0){
-            throw new TanpaInverse ("detA=0");
-        }
-        else if (detA!= 0){
-            double a11 = this.a22/detA;
-            double a12 = this.a21/detA;
-            double a21 = this.a12/detA;
-            double a22 = this.a11/detA;
-           
-            throw new TanpaInverse ("detA!=0");
-        }
-        throw new SalahIndeks("Indeks inverse");
-    }
-        catch (TanpaInverse err) { }
+  /*Matriks2x2 inverseSingular() throws TanpaInverse {
+        int a11 = 0, a12 = 0, a21 = 0, a22 = 0;
+        Matriks2x2 C = new Matriks2x2 (a11, a12, a21, a22);
         
-        return new Matriks2x2 (a11, a12, a21, a22);
-    } 
-    
-    /*Matriks2x2 inverseSingular () throws TanpaInverse{
-        Matriks2x2 C = new Matriks2x2 (2, 2, 1, 1);
-        double detC = C.determinan();
-   
-        try{
-        if (detC == 0){
-            throw new TanpaInverse ("detA=0");
-        }
-        else if (detC!= 0){
-            double a11 = this.a22/detC;
-            double a12 = this.a21/detC;
-            double a21 = this.a12/detC;
-            double a22 = this.a11/detC;
-           
-            throw new TanpaInverse ("detC!=0");
-        }
-    }
-        catch (TanpaInverse err) { }
-        
-        return new Matriks2x2 (a11, a12, a21, a22);
+
+        return new Matriks2x2(a11, a12, a21, a22);
     }*/
-    
     
     private int a11, a12, a21, a22;
 }

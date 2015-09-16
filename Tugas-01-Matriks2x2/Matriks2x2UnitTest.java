@@ -3,31 +3,12 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-/**
- * The test class Matriks2x2UnitTE.
- *
- * @author  (your name)
- * @version (a version number or a date)
- */
 public class Matriks2x2UnitTest {
-    /**
-     * Default constructor for test class Matriks2x2UnitTE
-     */
     public Matriks2x2UnitTest() { }
 
-    /**
-     * Sets up the test fixture.
-     *
-     * Called before every test case method.
-     */
     @Before
     public void setUp() { }
 
-    /**
-     * Tears down the test fixture.
-     *
-     * Called after every test case method.
-     */
     @After
     public void tearDown() { }
     
@@ -156,14 +137,13 @@ public class Matriks2x2UnitTest {
         assertEquals(A.elemen(2,2), a22);
     }
     
-
     /*@Test(expected=TanpaInverse.class)
     public void inverseSingular() throws TanpaInverse {
         Matriks2x2 C = new Matriks2x2(2, 2, 1, 1);
         assertEquals(C.determinan(), 0.0, 0.01);
         C.inverse();
-    }
-    */
+    }*/
+    
     private int a11 = 1, a12 = 2, 
                 a21 = 3, a22 = 4;                
     private int b11 = 5, b12 = 6, 
