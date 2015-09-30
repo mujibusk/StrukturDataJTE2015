@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=kata
+comment0.target=Kata(java.lang.String[])
+comment1.params=
+comment1.target=java.lang.String\ tampilkan()
+comment2.params=kata
+comment2.target=int\ tampilkanUnit(java.lang.String[])
+comment3.params=
+comment3.target=int\ jumlahUnit()
+numComments=4
